@@ -37,7 +37,7 @@ class TSNEOp final : public Operator<CPUContext> {
   // The constructor. A Caffe2 operator constructor should always accept two
   // inputs: an OperatorDef protobuf object, and a pointer to a workspace,
   // which hosts all of the blobs.
-  DropoutOp(const OperatorDef& operator_def, Workspace* ws)
+  TSNEOp(const OperatorDef& operator_def, Workspace* ws)
       : Operator<CPUContext>(operator_def, ws),
         // Now, below here, there are the set of parameters that this operator
         // will be using. These are also helper macros that are defined in
@@ -85,7 +85,7 @@ class TSNEOp final : public Operator<CPUContext> {
     // In any case, we will get the output TensorCPU object, and reshape it to
     // the correct shape.
     TensorCPU* Y = Output(0);
-    Y->Reshape(N, D);
+    Y->Resize(N, dims_);
 
     // After all these, we will simply start running the tsne algorithm.
     tsne_->run(
