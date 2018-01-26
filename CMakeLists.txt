@@ -32,6 +32,10 @@ add_library(caffe2_tsne
     ${CMAKE_CURRENT_SOURCE_DIR}/bhtsne/tsne.cpp
     )
 
+target_include_directories(caffe2_tsne
+    PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/bhtsne/)
+
 # ---[ (4) Add your custom flags and target rules here.
 # For the case of TSNE, we don't have anything to add.
 

@@ -18,6 +18,6 @@ We will demonstrate the mechanism using a popular software package, T-SNE, and s
 
 ## Getting started
 
-To build the library, change the Makefile contents to point to your Caffe2 install, and then do `make`.
+To build the library, install the most recent version of Caffe2. Then, follow the standard cmake installation protocol. Usually what people do with cmake is like `mkdir build && cd build && cmake .. && make`.
 
 To run the ipython notebook, simply do `ipython notebook` in the root folder of this repository. If your Caffe2 install is not in the default python path, you might need to add `PYTHONPATH=/path/to/your/caffe2/install` before the ipython command. You will also need to download the MNIST dataset [here](http://yann.lecun.com/exdb/mnist/).
